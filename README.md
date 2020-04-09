@@ -1,5 +1,7 @@
 # ArcGIS Online Feature Serivce Layers to GeoJSON
 
+**Work in progress, use at own risk!**
+
 A simple script to download all layers from an ArcGIS Online Feature Service to GeoJSON.
 
 > Inspired by this blog post - https://blog.cartong.org/2019/03/29/harvesting-large-quantity-data-from-arcgis-rest-services-using-tool/

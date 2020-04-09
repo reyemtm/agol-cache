@@ -1,0 +1,20 @@
+{
+  "name": "featureServiceToGeoJSON",
+  "version": "0.1.0",
+  "description": "A simple script to download all layers withing an ArcGIS Online Feature Service as GeoJSON.",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "gis",
+    "arcgis",
+    "agol",
+    "geojson",
+    "arcgis online"
+  ],
+  "author": "Malcolm Meyer",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}

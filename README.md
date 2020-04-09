@@ -14,7 +14,7 @@ const urls = [
 cache(urls[0])
 ```
 
-## Things that would be nice but are not important to me so will likely not add.
+## Possible Improvements
 
 - [ ] Add the possibility to use a token for restricted services.
 - [ ] Add the ability to add query parameters.

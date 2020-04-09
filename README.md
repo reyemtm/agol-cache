@@ -1,4 +1,4 @@
-# AGOL Cache
+# ArcGIS Online Feature Serivce Layers to GeoJSON
 
 A simple script to download all layers withing an ArcGIS Online Feature Service as GeoJSON.
 

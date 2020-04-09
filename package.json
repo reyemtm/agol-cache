@@ -1,6 +1,6 @@
 {
   "name": "agol-cache",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple script to download all layers from an ArcGIS Online Feature Service to GeoJSON.",
   "scripts": {
     "test": "node test"

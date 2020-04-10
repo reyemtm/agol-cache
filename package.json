@@ -1,8 +1,9 @@
 {
   "name": "agol-cache",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A simple script to download all layers from an ArcGIS Online Feature Service to GeoJSON.",
   "homepage": "https://github.com/reyemtm/agol-cache/blob/master/README.md",
+  "main": "lib/featureServiceToGeoJSON.js",
   "scripts": {
     "test": "node test"
   },

@@ -1,6 +1,6 @@
 # ArcGIS Online Feature Serivce Layers to GeoJSON
 
-**Work in progress, use at own risk!**
+**Work in progress, pull requests welcome!**
 
 A simple script to download all layers from an ArcGIS Online Feature Service to GeoJSON. This works with ``OBJECTID`` or ``FID`` as the unique identifier field.
 

@@ -7,7 +7,7 @@ A simple script to download all layers from an ArcGIS Online Feature Service to 
 > Inspired by this blog post - https://blog.cartong.org/2019/03/29/harvesting-large-quantity-data-from-arcgis-rest-services-using-tool/
 
 ```JavaScript
-const cache = require("./lib/featureServiceToGeoJSON.js")
+const cache = require("agol-cache")
 
 const urls = [
   "https://services9.arcgis.com/featureSerivceID/arcgis/rest/services/featureServiceName/FeatureServer/"

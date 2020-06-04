@@ -4,11 +4,7 @@
 
 A simple script to download all layers from an ArcGIS Online Feature Service to GeoJSON. This works with ``OBJECTID`` or ``FID`` as the unique identifier field. More details on the background and functionality can be found in the link below.
 
-
 [https://www.getbounds.com/blog/exporting-agol-feature-services/](Exporting AGOL Feature Services)
-
-
-> Inspired by this blog post - https://blog.cartong.org/2019/03/29/harvesting-large-quantity-data-from-arcgis-rest-services-using-tool/
 
 ```JavaScript
 const cache = require('agol-cache')

@@ -7,6 +7,7 @@ A simple script to download all layers from an ArcGIS Online Feature Service to 
 > [Exporting AGOL Feature Services](https://www.getbounds.com/blog/exporting-agol-feature-services/)
 Using NodeJS and Batches to Transform an ArcGIS Online Feature Service to GeoJSON
 
+**Version 0.3.0 fixed an error where some features were downloaded twice. It also adds the ability to add a prefix to the downloaded files.
 
 ```JavaScript
 const cache = require('agol-cache')
@@ -18,7 +19,7 @@ const urls = [
 cache(urls[0], {folder: 'geojson-cache'}) // setting the folder option is optional, default is geojson-cache in the root folder
 ```
 
-## Possible Improvements
+## Missing Features Needing External Work via Pull Requests
 
 - [ ] Add the possibility to use a token for restricted services.
 - [ ] Add the ability to add query parameters.

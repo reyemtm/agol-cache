@@ -19,7 +19,7 @@ const urls = [
   'https://services9.arcgis.com/featureSerivceID/arcgis/rest/services/featureServiceName/FeatureServer/'
 ];
 
-cache(urls[0], {
+cache.featureServiceToGeoJSON(urls[0], {
   folder: 'geojson-cache',
   prefix: 'agol_'
 }) // setting the folder option and prefix is optional, default is geojson-cache in the root folder

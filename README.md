@@ -22,8 +22,6 @@ cache.featureServiceToGeoJSON(urls[0], {
 
 ## Changelog
 
----
-
 ### Version 0.5.0 
  - added option to add a token in an environment variable
  - fixed a bug where if the folder did not exist the script would error out
@@ -34,14 +32,10 @@ cache.featureServiceToGeoJSON(urls[0], {
 TOKEN=validtokenstring
 ```
 
----
-
 ### Version 0.3.0
  - fixed an error where some features were downloaded twice
  - fixed an error where some features were not downloaded
  - adds the ability to add a prefix to the downloaded files
-
----
 
 ## Missing Features Needing External Work via Pull Requests
 

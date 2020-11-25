@@ -7,5 +7,6 @@ const urls = [
 ];
 
 cache.featureServiceToGeoJSON(urls[0], {
-  debug: true
+  debug: true,
+  // filter: "storm"
 })

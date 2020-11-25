@@ -15,6 +15,7 @@ const urls = [
 ];
 
 cache.featureServiceToGeoJSON(urls[0], {
+  filter: false //optional layer filter string,
   folder: 'geojson-cache', //optional, default is geojson-cache in the root folder
   prefix: 'agol_', //optional
   esriIdField: false //false or string, optional, the tool will attempt to determine this field automatially
@@ -30,6 +31,9 @@ TOKEN=validtokenstring
 ## Changelog
 
 **Could use help in cleaning up error handling with node-fetch.**
+
+### Version 0.6.1
+ - added a filter option which will filter any layer that does not include the filter string
 
 ### Version 0.6.0
  - added the ability to download Map Services

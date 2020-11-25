@@ -6,7 +6,7 @@ const urls = [
   "https://services9.arcgis.com/IUhP9plEzDTayUVC/arcgis/rest/services/Water_Utilities/FeatureServer/"
 ];
 
-cache.featureServiceToGeoJSON(urls[0], {
+cache.featureServiceToGeoJSON(urls[1], {
   debug: true,
   // filter: "storm"
 })

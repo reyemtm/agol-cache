@@ -30,14 +30,16 @@ TOKEN=validtokenstring
 
 ## Changelog
 
-**Could use help in cleaning up error handling with node-fetch.**
+### Version 0.7.0
+ - `fetch` replaced with `axios` and `retry-axios` due to timeout errors
+ - fixed an issue where not all the features were downloaded
 
 ### Version 0.6.1
  - added a filter option which will filter any layer that does not include the filter string
 
 ### Version 0.6.0
  - added the ability to download Map Services
- - now attempts to finds the ``esriFieldTypeOID`` field from the service definition
+ - now attempts to find the ``esriFieldTypeOID`` field from the service definition
  - shortened the code to just keep querying the service at 1000 feature intervals until no more features are returned
 
 ### Version 0.5.0 

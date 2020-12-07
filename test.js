@@ -8,13 +8,12 @@ const urls = [
   "https://services9.arcgis.com/IUhP9plEzDTayUVC/arcgis/rest/services/Water_Utilities/FeatureServer/"
 ];
 
-cache.featureServiceToGeoJSON(urls[3], {
+cache.featureServiceToGeoJSON(urls[1], {
   debug: true
   // filter: "storm"
 }, getAttachments);
 
 function getAttachments() {
   console.log("Attempting to query attachments.")
-  queryAttachments("https://services9.arcgis.com/IUhP9plEzDTayUVC/ArcGIS/rest/services/Water_Utilities_View_II/FeatureServer/", "./geojson-cache")  
+  // queryAttachments("https://services9.arcgis.com/IUhP9plEzDTayUVC/ArcGIS/rest/services/Water_Utilities_View_II/FeatureServer/", "./geojson-cache")  
 }
-

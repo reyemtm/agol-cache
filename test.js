@@ -9,9 +9,9 @@ const urls = [
 ];
 
 cache.featureServiceToGeoJSON(urls[2], {
-  debug: 1,
+  debug: true,
   // esriIdField: 'objectid',
-  layerByLayer: true
+  layerByLayer: false
   // filter: "storm"
 }, getAttachments);
 

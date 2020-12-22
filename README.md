@@ -15,11 +15,15 @@ const urls = [
 ];
 
 cache.featureServiceToGeoJSON(urls[0], {
-  filter: false //optional layer filter string,
-  folder: 'geojson-cache', //optional, default is geojson-cache in the root folder
-  prefix: 'agol_', //optional
-  esriIdField: false //false or string, optional, the tool will attempt to determine this field automatially
-  debug: false //optional, if true shows some more information
+    attachments: true, //wheher or not to check the service for attachments
+    debug: true, //debugging is now on be default, which just means it writes to a log file, and the console if silent is set to false 
+    esriIdField: "", //field to use for the esriIdField, used in the query parameters
+    filter: "", //string to filter layer names
+    folder: "geojson-cache", //folder to write the log file and geojson cache, relative to working directory or absolute path
+    layerByLayer: false, //use await on each layer, helpful for debugging
+    prefix: "", //prefix to add to the start of layer names
+    silent: true, //turn off viewing log messages in the console, disabled if debug is set to false, however spinner is always on
+    token: null //token to use for secured routes, taken from .env TOKEN variable
 })
 ```
 ## .env file example
@@ -29,6 +33,11 @@ TOKEN=validtokenstring
 ```
 
 ## Changelog
+
+### Version 0.9.0
+ - `fetch` added back with additional `fetch-retry` dependency
+ - timeout errors were issues on the Esri side and have been resolved
+ - timeouts and attempts are set internally (5 second timeout, 5 attempts), adjust in the raw code as needed
 
 ### Version 0.7.0
  - `fetch` replaced with `axios` and `retry-axios` due to timeout errors

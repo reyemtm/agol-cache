@@ -1,6 +1,7 @@
 # Custom
 *.geojson
 index.html
+test
 
 # Logs
 logs

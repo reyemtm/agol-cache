@@ -1,4 +1,4 @@
-# ArcGIS Online Feature Serivce Layers to GeoJSON
+# ArcGIS Online Feature Service Layers to GeoJSON
 
 **Work in progress, pull requests welcome!**
 

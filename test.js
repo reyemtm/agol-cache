@@ -18,7 +18,8 @@ cache.featureServiceToGeoJSON(urls[2], {
   layerByLayer: false, //use await on each layer, helpful for debugging
   prefix: "", //prefix to add to the start of layer names
   silent: true, //turn off viewing log messages in the console, disabled if debug is set to false, however spinner is always on
-  token: null //token to use for secured routes, taken from .env TOKEN variable
+  token: null, //token to use for secured routes, taken from .env TOKEN variable
+  pretty: false, //if true, the JSON output file will be formatted for human reading
 }, getAttachments);
 
 function getAttachments() {

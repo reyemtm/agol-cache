@@ -10,22 +10,22 @@ Using NodeJS and Batches to Transform an ArcGIS Online Feature Service to GeoJSO
 ```JavaScript
 const cache = require('agol-cache')
 
-const urls = [
-  'https://services9.arcgis.com/featureSerivceID/arcgis/rest/services/featureServiceName/FeatureServer/'
-];
+const url = 'https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/NTF_Members_and_NR_Listings/FeatureServer/'
 
-cache.featureServiceToGeoJSON(urls[0], {
-    attachments: true, //wheher or not to check the service for attachments
-    debug: true, //debugging is now on be default, which just means it writes to a log file, and the console if silent is set to false 
-    esriIdField: "", //field to use for the esriIdField, used in the query parameters
-    filter: "", //string to filter layer names
-    folder: "geojson-cache", //folder to write the log file and geojson cache, relative to working directory or absolute path
-    layerByLayer: false, //use await on each layer, helpful for debugging
-    prefix: "", //prefix to add to the start of layer names
-    silent: true, //turn off viewing log messages in the console, disabled if debug is set to false, however spinner is always on
-    token: null, //token to use for secured routes, taken from .env TOKEN variable
-    pretty: false //if true, the JSON output file will be formatted for human reading
-})
+cache.featureServiceToGeoJSON(url, { 
+  attachments: false, //wheher or not to check the service for attachments
+  debug: false, //debugging is now on be default, which just means it writes to a log file, and the console if silent is set to false 
+  esriIdField: "FID", //field to use for the esriIdField, used in the query parameters
+  filter: "", //string to filter layer names
+  folder: './output', //folder to write the log file and geojson cache, relative to working directory or absolute path
+  layerByLayer: true, //use await on each layer, helpful for debugging
+  prefix: "example", //prefix to add to the start of layer names
+  silent: false, //turn off viewing log messages in the console, disabled if debug is set to false, however spinner is always on
+  timeout: 60000, //default is 5000, increase as needed
+  token: null //token to use for secured routes, taken from .env TOKEN variable
+}, (layers) => {
+  // console.log('output ' + layers.length + ' layers')
+});
 ```
 ## .env file example
 
@@ -34,6 +34,11 @@ TOKEN=validtokenstring
 ```
 
 ## Changelog
+
+### Version 1.0.0
+ - Added a `config.timeout` option to set the fetch timeout
+ - Added support for large GeoJSON objects thanks a pull request from [@jwoyame](https://github.com/jwoyame)
+ - Fixed a bug where not all the features would download due to large gaps in the sequential `esriIdField`
 
 ### Version 0.9.0
  - `fetch` added back with additional `fetch-retry` dependency

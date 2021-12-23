@@ -36,6 +36,10 @@ TOKEN=validtokenstring
 
 ## Changelog
 
+### Version 1.0.2
+ - Added an option to query the `json` endpoint and convert the data to GeoJSON once downloaded
+ - Added small tweaks to the spinner options
+
 ### Version 1.0.0
  - Added a `config.timeout` option to set the fetch timeout
  - Added support for large GeoJSON objects thanks a pull request from [@jwoyame](https://github.com/jwoyame)

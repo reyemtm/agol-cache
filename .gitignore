@@ -2,6 +2,7 @@
 *.geojson
 index.html
 test
+output
 
 # Logs
 logs

@@ -13,15 +13,16 @@ const cache = require('agol-cache')
 const url = 'https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/NTF_Members_and_NR_Listings/FeatureServer/'
 
 cache.featureServiceToGeoJSON(url, { 
-  attachments: false, //wheher or not to check the service for attachments
-  debug: false, //debugging is now on be default, which just means it writes to a log file, and the console if silent is set to false 
-  esriIdField: "FID", //field to use for the esriIdField, used in the query parameters
+  attachments: false, //whether or not to check the service for attachments
+  debug: false, //debugging is now on be default, which just means it writes to a log file, and the console logger is off if silent is set to false 
+  esriIdField: "", //field to use for the esriIdField, used in the query parameters, if NULL it is determined by the service response
   filter: "", //string to filter layer names
-  folder: './output', //folder to write the log file and geojson cache, relative to working directory or absolute path
-  layerByLayer: true, //use await on each layer, helpful for debugging
-  prefix: "example", //prefix to add to the start of layer names
-  silent: false, //turn off viewing log messages in the console, disabled if debug is set to false, however spinner is always on
-  timeout: 60000, //default is 5000, increase as needed
+  folder: './geojson-cache', //folder to write the log file and geojson cache, relative to working directory or absolute path
+  format: "json", //json or GeoJSON - json downloads the raw Esri JSON format then converts to GeoJSON (BETA), try this if using the GeoJSON endpoint fails
+  layerByLayer: false, //use await on each layer, slower but helpful for debugging
+  prefix: "test_", //prefix to add to the start of layer names
+  silent: true, //turn off viewing winston log messages and spinner "info" messages in the console
+  timeout: 2000, //default is 5000, increase as needed
   token: null //token to use for secured routes, taken from .env TOKEN variable
 }, (layers) => {
   // console.log('output ' + layers.length + ' layers')

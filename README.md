@@ -36,6 +36,23 @@ TOKEN=validtokenstring
 
 ## Changelog
 
+### Version 1.1.0
+ - Added a function `getAllServices.js` that writes `agol-services.json` and `agol-services.csv` to the root folder containing all services for the given endpoint.
+ - This function is a work in progress.
+
+```JavaScript
+const { getAllServices } = require("./lib/getAllServices.js")
+
+const config =   {
+  debug: true,
+  silent: true,
+  timeout: 5000,
+  token: ''
+};
+
+getAllServices('https://sampleserver6.arcgisonline.com/arcgis/rest/services', config)
+```
+
 ### Version 1.0.2
  - Added an option to query the `json` endpoint and convert the data to GeoJSON once downloaded
  - Added small tweaks to the spinner options

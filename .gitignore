@@ -3,6 +3,8 @@
 index.html
 test
 output
+agol-services.json
+agol-services.csv
 
 # Logs
 logs

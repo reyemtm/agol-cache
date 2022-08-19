@@ -1,5 +1,7 @@
 # ArcGIS Online Feature Service Layers to GeoJSON
 
+> Working on the drawingInfo - renderer.
+
 **Work in progress, pull requests welcome!**
 
 A simple script to download all layers from an ArcGIS Online Feature Service or Map Service to GeoJSON. The tool will attempt to identify the Esri OID field or one can be provided. More details on the background and functionality can be found in the link below.
@@ -11,6 +13,8 @@ Using NodeJS and Batches to Transform an ArcGIS Online Feature Service to GeoJSO
 const cache = require('agol-cache')
 
 const url = 'https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/NTF_Members_and_NR_Listings/FeatureServer/'
+
+//can use async/aawit with layerByLayer: true
 
 cache.featureServiceToGeoJSON(url, { 
   attachments: false, //whether or not to check the service for attachments
@@ -93,3 +97,9 @@ getAllServices('https://sampleserver6.arcgisonline.com/arcgis/rest/services', co
 - [ ] Add the ability to add query parameters.
 - [ ] Add an option to choose export format (JSON or GeoJSON)
 - [x] Add the possibility to use a token for restricted services.
+
+## Helpful Commands
+
+```bash
+ogr2ogr -f GPKG outfile.gpkg infile.geojson 
+```

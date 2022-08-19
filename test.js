@@ -19,7 +19,7 @@ const urls = [
   const layers = await cache.featureServiceToGeoJSON(urls[2],
     {
       attachments: false, //whether or not to check the service for attachments
-      debug: true, //debugging is now on be default, which just means it writes to a log file, and the console logger is off if silent is set to false
+      debug: false, //debugging is now on be default, which just means it writes to a log file, and the console logger is off if silent is set to false
       esriIdField: "", //field to use for the esriIdField, used in the query parameters, if NULL it is determined by the service response
       filter: "states", //string to filter layer names
       folder: "./output", //folder to write the log file and geojson cache, relative to working directory or absolute path

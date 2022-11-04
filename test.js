@@ -3,7 +3,7 @@ const queryAttachments = require("./lib/queryAttachments.js");
 
 // async only works with layerByLayer: true
 (async () => {
-  const layers = await cache.featureServiceToGeoJSON('https://services2.arcgis.com/3eV4Iyp0knHf3tfe/ArcGIS/rest/services/pptype090122/FeatureServer2',
+  const layers = await cache.featureServiceToGeoJSON('',
     {
       attachments: false, //whether or not to check the service for attachments
       debug: true, //debugging is now on be default, which just means it writes to a log file, and the console logger is off if silent is set to false

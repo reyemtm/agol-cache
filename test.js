@@ -3,16 +3,16 @@ const queryAttachments = require("./lib/queryAttachments.js");
 
 // async only works with layerByLayer: true
 (async () => {
-  const layers = await cache.featureServiceToGeoJSON('',
+  const layers = await cache.featureServiceToGeoJSON('https://partnerships.nationalmap.gov/arcgis/rest/services/USGSLidarProjects/MapServer/',
     {
       attachments: false, //whether or not to check the service for attachments
       debug: true, //debugging is now on be default, which just means it writes to a log file, and the console logger is off if silent is set to false
       esriIdField: "", //field to use for the esriIdField, used in the query parameters, if NULL it is determined by the service response
-      filter: "pptype090122", //string to filter layer names
+      filter: "", //string to filter layer names
       folder: "./output", //folder to write the log file and geojson cache, relative to working directory or absolute path
       format: "json", //json or GeoJSON - json downloads the raw Esri JSON format then converts to GeoJSON (BETA), try this if using the GeoJSON endpoint fails
       layerByLayer: true, //use await on each layer, slower but helpful for debugging
-      prefix: "ppl_", //prefix to add to the start of layer names
+      prefix: "test_", //prefix to add to the start of layer names
       silent: false, //turn off viewing winston log messages and spinner "info" messages in the console
       timeout: 20000, //default is 5000, increase as needed
       token: null, //token to use for secured routes, taken from .env TOKEN variable

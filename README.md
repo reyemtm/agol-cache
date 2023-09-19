@@ -48,6 +48,7 @@ TOKEN=validtokenstring
 ### Version 1.2.0
 
 - Added `npx` functionality:
+- Added a decoder for coded domains based on the layer config `field.domain.codedValues` field.
 
 ```
 npx agol2geojson serviceURL TOKEN

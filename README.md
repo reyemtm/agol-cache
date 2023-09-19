@@ -1,7 +1,7 @@
 # ArcGIS Online Feature Service Layers to GeoJSON
 
 ```bash
-npx agol2geojson serviceURL TOKEN
+npx agol-cache serviceURL TOKEN
 ```
 
 The `npx` script will download all features to an `export` folder in the current directory and prefix all files with `export_`. All other config options are set to their defaults.
@@ -51,7 +51,7 @@ TOKEN=validtokenstring
 - Added a decoder for coded domains based on the layer config `field.domain.codedValues` field.
 
 ```
-npx agol2geojson serviceURL TOKEN
+npx agol-cache serviceURL TOKEN
 ```
 
 ### Version 1.1.0

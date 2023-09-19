@@ -1,10 +1,12 @@
 # Custom
+export
 *.geojson
 index.html
 test
 output
 agol-services.json
 agol-services.csv
+fff
 
 # Logs
 logs

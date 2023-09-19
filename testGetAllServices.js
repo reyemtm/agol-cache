@@ -7,4 +7,5 @@ const config =   {
   token: ''
 };
 
-getAllServices('https://sampleserver6.arcgisonline.com/arcgis/rest/services', config)
+// getAllServices('https://sampleserver6.arcgisonline.com/arcgis/rest/services', config)
+getAllServices("https://tigerweb.geo.census.gov/arcgis/rest/services/", config);

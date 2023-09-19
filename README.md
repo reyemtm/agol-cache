@@ -1,10 +1,14 @@
 # ArcGIS Online Feature Service Layers to GeoJSON
 
-> Working on the drawingInfo - renderer.
+```bash
+npx agol2geojson serviceURL TOKEN
+```
 
-**Work in progress, pull requests welcome!**
+The `npx` script will download all features to an `export` folder in the current directory and prefix all files with `export_`. All other config options are set to their defaults.
 
-A simple script to download all layers from an ArcGIS Online Feature Service or Map Service to GeoJSON. The tool will attempt to identify the Esri OID field or one can be provided. More details on the background and functionality can be found in the link below.
+---
+
+Download all layers from an ArcGIS Online Feature Service or Map Service to GeoJSON. The tool will attempt to identify the Esri OID field or one can be provided. More details on the background and functionality can be found in the link below.
 
 > [Exporting AGOL Feature Services](https://www.getbounds.com/blog/exporting-agol-feature-services/)
 Using NodeJS and Batches to Transform an ArcGIS Online Feature Service to GeoJSON
@@ -27,7 +31,8 @@ cache.featureServiceToGeoJSON(url, {
   prefix: "test_", //prefix to add to the start of layer names
   silent: true, //turn off viewing winston log messages and spinner "info" messages in the console
   timeout: 2000, //default is 5000, increase as needed
-  token: null //token to use for secured routes, taken from .env TOKEN variable
+  token: null //token to use for secured routes, taken from .env TOKEN variable,
+  steps: 1000 //number of features queried on each request
 }, (layers) => {
   // console.log('output ' + layers.length + ' layers')
 });
@@ -39,6 +44,14 @@ TOKEN=validtokenstring
 ```
 
 ## Changelog
+
+### Version 1.2.0
+
+- Added `npx` functionality:
+
+```
+npx agol2geojson serviceURL TOKEN
+```
 
 ### Version 1.1.0
  - Added a function `getAllServices.js` that writes `agol-services.json` and `agol-services.csv` to the root folder containing all services for the given endpoint.
@@ -56,6 +69,8 @@ const config =   {
 
 getAllServices('https://sampleserver6.arcgisonline.com/arcgis/rest/services', config)
 ```
+### Version 1.1.9
+- Added `steps` option to limit the amount of features queried on each fetch request, which defaults to 1000. Lower this number if you get timeouts from the REST service.
 
 ### Version 1.0.2
  - Added an option to query the `json` endpoint and convert the data to GeoJSON once downloaded
@@ -94,6 +109,7 @@ getAllServices('https://sampleserver6.arcgisonline.com/arcgis/rest/services', co
 
 ## Missing Features Needing External Work via Pull Requests
 
+- [ ] Working on the drawingInfo - renderer.
 - [ ] Add the ability to add query parameters.
 - [ ] Add an option to choose export format (JSON or GeoJSON)
 - [x] Add the possibility to use a token for restricted services.
@@ -102,4 +118,8 @@ getAllServices('https://sampleserver6.arcgisonline.com/arcgis/rest/services', co
 
 ```bash
 ogr2ogr -f GPKG outfile.gpkg infile.geojson 
+```
+
+```bash
+ogr2ogr -f MVT -dsco MINZOOM=10 -dsco MAXZOOM=14 target.mbtiles output/infile.geojson
 ```

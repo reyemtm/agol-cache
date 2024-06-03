@@ -1,15 +1,14 @@
 {
   "name": "agol-cache",
-  "version": "1.2.2",
+  "version": "1.4.0",
   "description": "A simple script to download all layers from an ArcGIS Online Feature Service to GeoJSON.",
   "homepage": "https://github.com/reyemtm/agol-cache/blob/master/README.md",
   "main": "lib/featureServiceToGeoJSON.js",
   "scripts": {
-    "test": "node test"
+    "test1": "node lib/getGdalFormats.js && jest",
+    "test": "jest"
   },
-  "bin": {
-    "agol-cache": "./bin/agol2geojson.js"
-  },
+  "bin": "./bin/agol-cache-cli.js",
   "keywords": [
     "gis",
     "arcgis",
@@ -27,6 +26,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "fetch-retry": "^4.0.1",
+    "gdal3.js": "^2.4.0",
     "node-fetch": "^2.6.1",
     "ora": "^4.0.3",
     "winston": "^3.3.3"
@@ -35,5 +35,12 @@
     "ignore": [
       "*.log"
     ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 120000
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
